@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operation Sindoor</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            background-color: #fff; /* White background */
+            color: red; /* Red text */
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .video-section {
+            width: 45%;
+            margin: 10px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 250px;
+            border: none;
+        }
+        @media (max-width: 768px) {
+            .video-section {
+                width: 100%;
+            }
+            iframe {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>Operation Sindoor</header>
+    <script>
+        const youtubeUrls = [
+            "https://www.youtube.com/embed/fcHz-E4hEFo?si=mBdjk5eu6i6K6r-Z",
+            "https://www.youtube.com/embed/gCNeDWCI0vo?si=PeQuhQWjmdDWlghW",
+            "https://www.youtube.com/embed/s6NqJevIftk?si=prqVSc7KEKFnICUo",
+            "https://www.youtube.com/embed/Mhz4wqHeQVU",
+            "https://www.youtube.com/embed/nyd-xznCpJc?si=vKr7VjrZmSmFCC31",
+            "https://www.youtube.com/embed/9T7VpBKdu68?si=HzQBE5SuBruwtfVq"
+        ];
+
+        youtubeUrls.forEach(url => {
+            const videoSection = document.createElement('div');
+            videoSection.className = 'video-section';
+
+            const iframe = document.createElement('iframe');
+            iframe.src = url;
+            iframe.allowFullscreen = true;
+
+            videoSection.appendChild(iframe);
+            document.body.appendChild(videoSection);
+        });
+    </script>
+</body>
+</html>
